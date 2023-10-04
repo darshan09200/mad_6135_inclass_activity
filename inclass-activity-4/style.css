@@ -1,0 +1,71 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#canvas {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#leftPanel {
+  flex: 0.5;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+#gameBoard {
+  flex: 1;
+  position: relative;
+}
+
+#animatedWord {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  letter-spacing: 8px;
+}
+
+#animatedWord .correct {
+  background-color: #98f098;
+}
+#animatedWord .incorrect {
+  background-color: #f09898;
+}
+.score-wrapper,
+.lives-wrapper {
+  font-size: 18px;
+  text-align: center;
+  padding: 8px;
+}
+
+#score-board {
+  align-self: center;
+  border: 1px solid black;
+  width: calc(100% - 32px);
+  margin: 16px;
+}
+#score-board > * {
+  text-align: center;
+}
+
+.score-board-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#restart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}

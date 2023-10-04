@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Circle</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- the square element which would be replicating the screen saver -->
+    <div id="canvas">
+      <div id="leftPanel">
+        <div class="lives-wrapper">Lives: <span id="lives">3</span></div>
+        <div class="score-wrapper">Score: <span id="score">0</span></div>
+        <div class="score-board-wrapper">
+          <div>Scoreboard</div>
+          <table id="score-board"></table>
+        </div>
+      </div>
+      <div id="gameBoard">
+        <span id="animatedWord"></span>
+        <button id="restart">Restart</button>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
