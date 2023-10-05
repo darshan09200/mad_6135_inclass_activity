@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Circle</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="two-column">
+      <div>
+        <div class="two-column" style="align-items: center">
+          <div style="display: flex; flex-direction: column">
+            <h2>Report</h2>
+            <table id="report-table" style="flex-grow: 1"></table>
+          </div>
+          <div style="margin: 16px" class="bold">
+            <div id="class-average"></div>
+          </div>
+        </div>
+
+        <div class="two-column">
+          <div>
+            <h3>Students</h3>
+            <div>
+              <label for="gpa-sort-order">Current sort order for gpa</label>
+              <button id="gpa-sort-order"></button>
+              <button id="gpa-sort-order-asc">⬇️</button>
+              <button id="gpa-sort-order-desc">⬆️</button>
+            </div>
+            <table id="gpa-average-table"></table>
+          </div>
+          <div>
+            <h2>Subjects</h2>
+            <div>
+              <label for="subject-sort-order"
+                >Current sort order for subjects</label
+              >
+              <button id="subject-sort-order"></button>
+              <button id="subject-sort-order-asc">⬇️</button>
+              <button id="subject-sort-order-desc">⬆️</button>
+            </div>
+            <table id="subject-average-table"></table>
+          </div>
+        </div>
+      </div>
+      <div id="graphs">
+        <div style="margin: 16px">
+          <h3>Legend</h3>
+          <div class="legend-table">
+            <div>
+              <div class="legend male"></div>
+              <span>Male</span>
+            </div>
+            <div>
+              <div class="legend female"></div>
+              <span>Female</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
