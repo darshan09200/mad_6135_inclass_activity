@@ -82,7 +82,10 @@ document.querySelectorAll(columnSelector).forEach((el) => {
     } else {
       this.classList.toggle("show");
       clearTimeout(lastClickTimer);
-      if (lastClicked.dataset.emoji === this.dataset.emoji) {
+      if (
+        lastClicked !== this &&
+        lastClicked.dataset.emoji === this.dataset.emoji
+      ) {
         lastClicked.classList.add("correct");
         this.classList.add("correct");
       } else {
@@ -128,9 +131,9 @@ const onBothOpened = () => {
 
 let timer;
 const updateStats = () => {
-  time.innerText = Math.floor(
-    (new Date().valueOf() - gameStartedAt.valueOf()) / 1000
-  );
+  time.innerText = gameStartedAt
+    ? Math.floor((new Date().valueOf() - gameStartedAt.valueOf()) / 1000)
+    : 0;
   movesEl.innerHTML = moves;
 };
 const onGameStarted = () => {
@@ -151,6 +154,7 @@ const onGameEnd = (finished = true) => {
   gameStartedAt = null;
   moves = 0;
   updateScoreBoard();
+  updateStats();
   clearInterval(timer);
 };
 

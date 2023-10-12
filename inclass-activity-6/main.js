@@ -212,9 +212,9 @@ const onSwapped = () => {
 
 let timer;
 const updateStats = () => {
-  time.innerText = Math.floor(
-    (new Date().valueOf() - gameStartedAt.valueOf()) / 1000
-  );
+  time.innerText = gameStartedAt
+    ? Math.floor((new Date().valueOf() - gameStartedAt.valueOf()) / 1000)
+    : 0;
   movesEl.innerHTML = moves;
 };
 const onGameStarted = () => {
@@ -232,6 +232,7 @@ const onGameEnd = (finished = true) => {
     finished: !!finished,
   });
   moves = 0;
+  updateStats();
   updateScoreBoard();
   clearInterval(timer);
 };
