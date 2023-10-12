@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Circle</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="canvas">
+      <div id="leftPanel">
+        <div class="time-wrapper">Time: <span id="time">0</span></div>
+        <div class="moves-wrapper">Moves: <span id="moves">0</span></div>
+        <div class="restart-wrapper">
+          <button id="restart">Restart Game</button>
+        </div>
+
+        <div class="score-board-wrapper">
+          <div>Attempts</div>
+          <table id="attempts-board"></table>
+        </div>
+        <div class="score-board-wrapper">
+          <div>Scoreboard</div>
+          <table id="score-board"></table>
+        </div>
+      </div>
+      <div id="gameBoard"></div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

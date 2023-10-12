@@ -1,0 +1,114 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#canvas {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#leftPanel {
+  flex: 0.5;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+#gameBoard {
+  flex: 1;
+  position: relative;
+}
+
+#gameBoard .puzzle-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#gameBoard .puzzle {
+  background-color: cornflowerblue;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 8px;
+  user-select: none;
+}
+#gameBoard .row {
+  display: flex;
+  flex-direction: row;
+}
+#gameBoard .row div {
+  width: 128px;
+  height: 128px;
+  font-size: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blanchedalmond;
+  color: black;
+  margin: 8px;
+  border-radius: 8px;
+}
+.moves-wrapper,
+.time-wrapper {
+  font-size: 18px;
+  text-align: center;
+  padding: 8px;
+}
+
+#score-board,
+#attempts-board {
+  align-self: center;
+  border: 1px solid black;
+  width: calc(100% - 32px);
+  margin: 16px;
+}
+#score-board > *,
+#attempts-board > * {
+  text-align: center;
+}
+
+.score-board-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+[draggable="true"].dragging {
+  opacity: 0.5;
+}
+
+[draggable="true"].over {
+  border: 1px dashed black;
+}
+
+.draggable {
+  border: 1px solid transparent;
+}
+.correct {
+  background-color: #98f098 !important;
+}
+.incorrect {
+  background-color: #f09898 !important;
+}
+
+.unfinished {
+  background-color: #f09898;
+}
+
+.restart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.puzzle-emoji > span {
+  visibility: hidden;
+}
+.puzzle-emoji.show > span {
+  visibility: visible;
+}
