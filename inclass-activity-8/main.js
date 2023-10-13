@@ -19,10 +19,10 @@ const player2Won = document.getElementById("player2Won");
 const player2Lost = document.getElementById("player2Lost");
 
 const BALL_WIDTH = 32;
-const PADDLE_WIDTH = 24;
+const PADDLE_WIDTH = BALL_WIDTH / 2;
 const PADDLE_HEIGHT = canvas.getBoundingClientRect().height * 0.2;
 const HOLE_HEIGHT = PADDLE_HEIGHT * 2;
-const GAP_BETWEEN_HOLE_AND_PADDLE = 60;
+const GAP_BETWEEN_HOLE_AND_PADDLE = 32;
 const DISTANCE_BETWEEN_CANVAS_AND_PADDLE = 16;
 
 const randomFloat = (min, max) => {
@@ -44,7 +44,7 @@ const randomAngle = () => {
 
 let difficultyLevel = 0.5;
 const getSpeed = () => {
-  if (difficultyLevel === -1) return randomFloat(1, 3);
+  if (difficultyLevel === -1 || difficultyLevel === 3) return randomFloat(1, 3);
   return difficultyLevel;
 };
 const getAngle = () => {
@@ -345,18 +345,18 @@ const onKeyPress = (event) => {
   if (!isGameRunning) return;
   if (event.keyCode == "38") {
     // up arrow
-    player2PaddleCoords.y -= 10;
+    player2PaddleCoords.y -= 20;
   } else if (event.keyCode == "40") {
     // down arrow
-    player2PaddleCoords.y += 10;
+    player2PaddleCoords.y += 20;
   } else {
     const char = String.fromCharCode(
       event.keyCode || event.which
     )?.toLowerCase();
     if (char == "w") {
-      player1PaddleCoords.y -= 10;
+      player1PaddleCoords.y -= 20;
     } else if (char == "s") {
-      player1PaddleCoords.y += 10;
+      player1PaddleCoords.y += 20;
     }
   }
 
