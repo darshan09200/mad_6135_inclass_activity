@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Circle</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="stadium">
+      <div class="header">
+        <h2>Game: <span id="gameState">Paused</span></h2>
+        <div>
+          <label for="difficultyLevel">Choose Difficulty Level:</label>
+          <select id="difficultyLevel">
+            <option value="0.5">Noob</option>
+            <option value="1">Easy</option>
+            <option value="2">Medium</option>
+            <option value="3">Hard</option>
+            <option value="-1">Pro</option>
+          </select>
+        </div>
+        <div>
+          <p><b>SpaceBar</b> - Start/Stop Game</p>
+        </div>
+      </div>
+      <div class="match-board">
+        <div>
+          <h2>Player 1</h2>
+          <div>
+            <h3>Won</h3>
+            <span id="player1Won">0</span>
+          </div>
+          <div>
+            <h3>Lost</h3>
+            <span id="player1Lost">0</span>
+          </div>
+          <div>
+            <h3>Controls</h3>
+            <p><b>W</b> - Move Up</p>
+            <p><b>S</b> - Move Down</p>
+          </div>
+        </div>
+        <div class="game-wrapper">
+          <div id="canvas">
+            <div id="ball"></div>
+            <div id="player1Paddle" class="paddle"></div>
+            <div id="player2Paddle" class="paddle"></div>
+            <div id="player1Hole" class="hole"></div>
+            <div id="player2Hole" class="hole"></div>
+            <div id="centerLine"></div>
+          </div>
+        </div>
+        <div>
+          <h2>Player 2</h2>
+          <div>
+            <h3>Won</h3>
+            <span id="player2Won">0</span>
+          </div>
+          <div>
+            <h3>Lost</h3>
+            <span id="player2Lost">0</span>
+          </div>
+          <div>
+            <h3>Controls</h3>
+            <p>⬆️ - Move Up</p>
+            <p>⬇️ - Move Down</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button id="startGame">Start Game</button>
+        <table id="gameScoreBoard"></table>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
